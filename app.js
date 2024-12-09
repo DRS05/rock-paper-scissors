@@ -28,6 +28,8 @@ function getHumanChoice() {
 
 
 function playRound(humanChoice, computerChoice) {
+	// Returns 0 if its a draw, -1 if the computer wins, 1 if the human wins.
+
 	if (humanChoice === computerChoice) {
 		console.log(`Draw! ${humanChoice} neither beats nor is beaten by ${computerChoice}.`);
 		return 0;
@@ -85,4 +87,22 @@ function playGame() {
 	determineWinner(humanScore, computerScore);
 }
 
-playGame();
+const rockButton = document.querySelector("#rock-button");
+const paperButton = document.querySelector("#paper-button");
+const scissorsButton = document.querySelector("#scissors-button");
+let humanChoice;
+
+rockButton.addEventListener("click", () => {
+	humanChoice = "rock";
+	console.log(humanChoice)
+});
+
+paperButton.addEventListener("click", () => {
+	humanChoice = "paper";
+	console.log(humanChoice)
+});
+
+scissorsButton.addEventListener("click", () => {
+	humanChoice = "scissors";
+	console.log(humanChoice)
+});
