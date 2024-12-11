@@ -1,7 +1,7 @@
 # rock-paper-scissors
 In this project I created an interactable rock paper scissors interface using HTML, CSS and Javascript.
 
-![image alt](image url)
+![image alt](https://github.com/DRS05/rock-paper-scissors/blob/main/images/rps_website_showcase.PNG?raw=true)
 
 ## What I learned
 - The overall fundamentals of Javascript
