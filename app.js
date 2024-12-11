@@ -13,9 +13,9 @@ function getComputerChoice() {
 	const randomChoiceIndex = Math.floor(Math.random() * 3);
 	const rpsChoices = ["rock", "paper", "scissors"];
 
-	const computerChoice = rpsChoices[randomChoiceIndex]
+	const computerChoice = rpsChoices[randomChoiceIndex];
 
-	showComputerChoice(computerChoice)
+	showComputerChoice(computerChoice);
 
 	return computerChoice;
 };
@@ -41,7 +41,7 @@ function evaluateRound(humanChoice, computerChoice) {
 
 
 function resetGame() {
-	window.location.reload()
+	window.location.reload();
 }
 
 
@@ -50,7 +50,7 @@ function showPlayAgainButton() {
 
 	playAgainButton.style.display = "block";
 
-	playAgainButton.addEventListener("click", resetGame)
+	playAgainButton.addEventListener("click", resetGame);
 }
 
 
@@ -66,7 +66,7 @@ function determineWinner(humanScore, computerScore) {
 		gameResultsParagraph.textContent = "Computer wins!";
 	}
 
-	showPlayAgainButton()
+	showPlayAgainButton();
 }
 
 
@@ -92,11 +92,11 @@ function showRoundWinner(outcomeHuman, humanChoice, computerChoice) {
 	const roundWinnerParagraph = document.querySelector("#round-winner");
 
 	if (outcomeHuman === -1) {
-		roundWinnerParagraph.textContent = `Round lost! ${computerChoice} beats ${humanChoice}`
+		roundWinnerParagraph.textContent = `Round lost! ${computerChoice} beats ${humanChoice}`;
 	} else if (outcomeHuman === 1) {
-		roundWinnerParagraph.textContent = `Round win! ${humanChoice} beats ${computerChoice}`
+		roundWinnerParagraph.textContent = `Round win! ${humanChoice} beats ${computerChoice}`;
 	} else {
-		roundWinnerParagraph.textContent = `Round draw! ${humanChoice} and ${humanChoice} do not beat each other.`
+		roundWinnerParagraph.textContent = `Round draw! ${humanChoice} and ${humanChoice} do not beat each other.`;
 	}
 }
 
@@ -105,7 +105,7 @@ function playRound(event, gameState) {
 
 	let humanChoice;
 
-	const button = event.target.closest("button")
+	const button = event.target.closest("button");
 	switch (button.id) {
 		case "rock-button":
 			humanChoice = "rock";
@@ -128,7 +128,7 @@ function playRound(event, gameState) {
 		gameState.humanScore++;
 	}
 
-	showRoundWinner(outcomeHuman, humanChoice, computerChoice)
+	showRoundWinner(outcomeHuman, humanChoice, computerChoice);
 	showNewScores(gameState.humanScore, gameState.computerScore);
 
 	determineWinner(gameState.humanScore, gameState.computerScore, gameState);
@@ -139,17 +139,15 @@ function playGame() {
 	const gameState = {
 		humanScore: 0,
 		computerScore: 0
-	}
+	};
 
 	showNewScores(gameState.humanScore, gameState.computerScore);
 
 	const rpsButtons = document.querySelector("#rps-buttons");
 
 	rpsButtons.addEventListener("click", event => {
-		console.log(gameState.humanScore);
-		console.log(gameState.computerScore);
 		if (gameState.humanScore < 5 && gameState.computerScore < 5) {
-			playRound(event, gameState)
+			playRound(event, gameState);
 		}
 	});
 }
