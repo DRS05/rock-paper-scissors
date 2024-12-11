@@ -4,13 +4,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script defer src="app.js"></script>
+	<link rel="stylesheet" href="stylesheet.css">
+	<script defer src="app.js"></script>
 </head>
 <body>
-	<button id="rock-button">Rock</button>
-	<button id="paper-button">Paper</button>
-	<button id="scissors-button">Scissors</button>
+	<header>
+		<h1>Rock Paper Scissors!</h1>
+		<p>First to five wins!</p>
+	</header>
 
-	<div id="rps-results"></div>
+	<button class="play-again-button">Play again?</button>
+
+	<div class="player-choice-container">
+		<h2>Select your choice</h2>
+		<section id="rps-buttons">
+			<button id="rock-button">
+				<img src="images/rock.png" alt="rock png">
+				<p>Rock</p>
+			</button>
+			<button id="paper-button">
+				<img src="images/paper.png" alt="paper png">
+				<p>Paper</p>
+			</button>
+			<button id="scissors-button">
+				<img src="images/scissors.png" alt="scissors png">
+				<p>Scissors</p>
+			</button>
+		</section>
+	</div>
+
+	<div class="computer-choice-container">
+		<h2 id="computer-choice-state">Round results</h2>
+		<section>
+			<div class="section-item">
+				<h3>Your choice</h3>
+				<img id="player-choice-image" src="images/question-mark.png" alt="rock png">
+				<p id="player-choice-paragraph">Unknown</p>
+			</div>
+			<div class="section-item">
+				<h3>Round winner</h3>
+				<p id="round-winner">State unkown</p>
+			</div>
+			<div class="section-item">
+				<h3>Computer choice</h3>
+				<img id="computer-choice-image" src="images/question-mark.png" alt="rock png">
+				<p id="computer-choice-paragraph">Unknown</p>
+			</div>
+			<div>
+		</section>
+	</div>
+
+	<div class="results-container">
+		<div class="score-section">
+			<h3 class="header-item">Your Score</h3>
+			<p id="player-score">0</p>
+		</div>
+		<div class="result-section">
+			<h3 class="header-item">Game Result</h3>
+			<p id="game-results">No winner, yet...</p>
+		</div>
+		<div class="score-section">
+			<h3 class="header-item">Computer Score</h3>
+			<p id="computer-score">0</p>
+		</div>
+	</div>
+
+	<footer>
+		<a href="https://www.flaticon.com/free-icons/cute" title="cute icons">Cute icons created by Freepik - Flaticon</a>
+	</footer>
 </body>
 </html>
